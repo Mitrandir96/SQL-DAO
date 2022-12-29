@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.sqldao.repository.Repository;
 
+import java.util.List;
+
 @RestController
 public class Controller {
     Repository repository;
@@ -12,7 +14,7 @@ public class Controller {
     }
 
     @GetMapping("/products/fetch-product")
-    public String fetchProduct(String name) {
+    public List<String> fetchProduct(String name) {
         return repository.getProductName(name);
     }
 }
